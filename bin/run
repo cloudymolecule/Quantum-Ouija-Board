@@ -1,0 +1,4 @@
+require_relative '../environment'
+
+instance = CLI.new
+instance.start
