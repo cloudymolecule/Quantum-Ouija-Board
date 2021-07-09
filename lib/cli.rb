@@ -18,7 +18,8 @@ class CLI
         if question_yn == 'y'
             puts 'Then lets proceed...'
             numbers = QUANTUM_API.get_numbers
-            # puts numbers
+            how_many_words_in_sentence(numbers[0])
+            
         else
             puts 'Ask a question...'
         end
@@ -29,5 +30,15 @@ class CLI
     def check_question_input(input) # => Sanitize input
         input[-1].gsub(/\W/,'')
         return input + '?'
+    end
+
+    def how_many_words_in_sentence(num)
+        num_of_words = 0
+        num.to_s.split('').each do |n|
+            if num_of_words == 0
+                num_of_words = N
+            end
+        end
+        num_of_words
     end
 end

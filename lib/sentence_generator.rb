@@ -1,0 +1,3 @@
+class SENTENCE_GENERATOR
+
+end
