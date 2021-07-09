@@ -13,12 +13,21 @@ class CLI
         question_yn = gets.strip.downcase
         until question_yn == 'y' || question_yn == 'n'
             puts 'it works'
+            question_yn = gets.strip.downcase
+        end
+        if question_yn == 'y'
+            puts 'Then lets proceed...'
+            numbers = QUANTUM_API.get_numbers
+            # puts numbers
+        else
+            puts 'Ask a question...'
         end
     end
 
     private
 
     def check_question_input(input) # => Sanitize input
-        return input = input.gsub(/\W/,' ') + '?'
+        input[-1].gsub(/\W/,'')
+        return input + '?'
     end
 end
