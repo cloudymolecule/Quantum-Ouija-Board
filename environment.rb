@@ -1,7 +1,7 @@
 require 'net/http'
 require 'json'
-require 'pry'
-require 'byebug'
+require 'colorize'
+require 'colorized_string'
 
 require_relative './lib/cli.rb'
 require_relative './lib/quantum_api.rb'
