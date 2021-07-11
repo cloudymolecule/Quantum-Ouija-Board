@@ -17,10 +17,8 @@ class CLI
         end
         if question_yn == 'y'
             puts 'Then lets proceed...'
-            # sentence = SENTENCE_GENERATOR.new_sentence
-            # puts sentence => we are here
-            puts DICT
-
+            sentence = SENTENCE_GENERATOR.new_sentence
+            puts sentence
         else
             puts 'Ask a question...'
         end
