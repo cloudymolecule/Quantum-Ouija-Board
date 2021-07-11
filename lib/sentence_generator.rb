@@ -42,9 +42,6 @@ class SENTENCE_GENERATOR
             pronoun_num =  select_pronouns(pronoun_num, numbers[0])
             subject_pronoun_num = select_pronouns(subject_pronoun_num, numbers[1])
 
-            # pronoun_num = array_minus_one(pronoun_num)
-            # subject_pronoun_num = array_minus_one(subject_pronoun_num)
-            
             sentence.insert(-2, OBJECT_PRONOUNS[subject_pronoun_num])
             sentence = PRONOUNS[pronoun_num].capitalize() + " " + sentence.join(" ") + ". " + "Goodbye."
         end
@@ -68,10 +65,4 @@ class SENTENCE_GENERATOR
         res
     end
 
-    # def array_minus_one(pronoun_var)
-    #     if pronoun_var != 0
-    #         pronoun_var -= 1
-    #     end
-    #     pronoun_var
-    # end
 end
