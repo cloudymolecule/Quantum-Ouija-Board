@@ -1,41 +1,48 @@
 class CLI
     def start
-        puts "WELCOME TO QUANTUM OUIJA BOARD"
-        puts "Ask a question..."
+        puts ColorizedString["------------------------------"].colorize(:red)
+        puts ColorizedString["WELCOME TO QUANTUM OUIJA BOARD"].colorize(:red)
+        puts ColorizedString["------------------------------"].colorize(:red)
+        puts ""
+        puts ColorizedString["Ask a question..."].colorize(:yellow)
         input = gets.strip.downcase
 
         while input != 'exit' do
             if input == ''
-                puts "Come on, just ask a little question"
+                puts ColorizedString["Come on, just ask a little question"].colorize(:yellow)
                 input = gets.strip.downcase
             end
 
             if input != ''
                 input = check_question_input(input)
-                puts 'Is this your question?: ' + input
-                puts 'Y/N'
+                puts ColorizedString['Is this your question?: '].colorize(:yellow) + input
+                puts ColorizedString['Y/N'].colorize(:yellow)
                 input = gets.strip.downcase
 
-                if input == 'y'
-                    puts 'Then lets proceed...'
+                if input == 'y' || input == 'yes'
+                    puts ""
+                    puts ColorizedString['Then lets proceed...'].colorize(:yellow)
+                    puts ""
                     sentencess = SENTENCE_GENERATOR.new
                     sentence = sentencess.new_sentence
                     sentence.split('').each do |letter|
                         sleep 0.2
-                        print letter
+                        print ColorizedString[letter].colorize(:red)
                     end
-                    puts ''
-                    puts "Ask another question (or exit.)"
+                    puts ""
+                    puts ""
+                    puts ColorizedString["Ask another question (or exit.)"].colorize(:yellow)
                     input = gets.strip.downcase
                 else
-                    puts 'Ask a question...'
+                    puts ColorizedString['Ask a question...'].colorize(:yellow)
                 end
 
             end
 
         end
 
-        puts 'GOODBYE.'
+        puts ColorizedString['GOODBYE.'].colorize(:red)
+        puts ""
 
     end
 

@@ -1,8 +1,7 @@
 class SENTENCE_GENERATOR
     
     def new_sentence
-        # numbers = QUANTUM_API.get_numbers
-        numbers = [33333, 34444, 33333, 33333, 33333, 33333, 33332, 33333, 33333, 333333]
+        numbers = QUANTUM_API.get_numbers
         numbers_copy = numbers
         reduced_numbers = []
         num_of_words = 0
